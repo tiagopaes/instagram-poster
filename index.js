@@ -96,8 +96,8 @@ async function run() {
     console.debug('clicking log in');
 
     // Click the login button
-    let button = await page.$x("//div[contains(text(),'Log In')]//..");
-    await button[0].click();
+    let button = await page.$("button[type='submit']");
+    await button.click();
 
     // Make sure we are signed in
     await page.waitForNavigation();
